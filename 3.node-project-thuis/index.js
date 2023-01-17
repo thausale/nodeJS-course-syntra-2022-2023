@@ -9,11 +9,24 @@ const port = 8889;
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+//Op deze manier doe je een query en moet je bij de url /?id=52 doen
+// app.get("/", (req, res) => {
+//   try {
+//     const arr = req.query.id;
+//     console.log(req.query.id);
+//     res.json(req.query.id);
+//     // res.json(arr);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// });
+
+//Op deze manier werk je met parameter en die je bij de url /52
+app.get("/:id", (req, res) => {
   try {
-    const arr = req.query.id;
-    // console.log(req.query.id);
-    res.json(req.query.id);
+    const value = req.params.id;
+    console.log(req.params);
+    res.json(value);
     // res.json(arr);
   } catch (error) {
     console.error(error);

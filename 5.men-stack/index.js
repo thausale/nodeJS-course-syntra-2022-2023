@@ -51,13 +51,13 @@ app.get("/", async (req, res) => {
       //of the ., it's allowed to be any character
 
       const regex = new RegExp(`${pattern}`, "g");
-      console.log(pattern);
-      console.log(regex);
+      // console.log(pattern);
+      // console.log(regex);
       const regexMovie = movies.filter((movie) => {
         const title = movie.title;
         return title.match(regex);
       });
-      console.log(regexMovie);
+      // console.log(regexMovie);
       return res.status(200).json(regexMovie);
     }
   } catch (error) {

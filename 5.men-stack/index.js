@@ -83,7 +83,7 @@ app.post("/", async (req, res) => {
       releaseyear,
       actors,
     });
-    res.json(result);
+    res.status(201).json(result);
   } catch (error) {
     console.error(error);
   }

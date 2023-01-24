@@ -29,7 +29,7 @@ app.get("/", async (req, res) => {
       );
       //If there is an exact match, we return it
       if (filtered.length > 0) {
-        console.log(filtered);
+        // console.log(filtered);
         return res.status(200).json(filtered);
       }
       //If there is no exact match we make a regex out of the input title
@@ -54,8 +54,7 @@ app.get("/", async (req, res) => {
       // console.log(pattern);
       // console.log(regex);
       const regexMovie = movies.filter((movie) => {
-        const title = movie.title;
-        return title.match(regex);
+        return movie.title.match(regex);
       });
       // console.log(regexMovie);
       return res.status(200).json(regexMovie);

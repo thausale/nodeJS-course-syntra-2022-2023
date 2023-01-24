@@ -13,24 +13,6 @@ const middleware = (req, res, next) => {
   next();
 };
 
-const data = [
-  {
-    id: 1,
-    todo: "nodeJS leren",
-    completed: false,
-  },
-  {
-    id: 2,
-    todo: "php leren",
-    completed: true,
-  },
-  {
-    id: 3,
-    todo: "JS leren",
-    completed: false,
-  },
-];
-
 app.get(endpoint, async (req, res) => {
   try {
     const todos = await todoClient.find({}).toArray();

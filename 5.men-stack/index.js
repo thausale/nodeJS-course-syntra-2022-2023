@@ -59,6 +59,8 @@ app.get("/", async (req, res) => {
       // console.log(regexMovie);
       return res.status(200).json(regexMovie);
     }
+
+    return res.status(200).json(movies);
   } catch (error) {
     console.error(error);
   }

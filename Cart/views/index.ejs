@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageTitle %>
+    </title>
+</head>
+
+<body>
+    <div>
+        <h1>
+            <% products.forEach(product=> { %>
+                <article>
+                    <%= product.title%>
+                        <button class="addToCart" data-id="<%=product.id %>">add to cart</button>
+                </article>
+                <% }) %>
+        </h1>
+    </div>
+    <div class="cart"></div>
+    <p>
+        <%= cart.length %> Product(s) in cart
+    </p>
+    <% cart.forEach(product=> { %>
+        <article>
+            <%= product.title%>
+        </article>
+        <% }) %>
+</body>
+<script src="main.js"></script>
+
+</html>

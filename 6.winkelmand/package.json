@@ -1,0 +1,20 @@
+{
+  "name": "6.winkelmand",
+  "version": "1.0.0",
+  "description": "Maak een winkelmandje app.\r Express app\r EJS gebruiken als view\r MVC structuur gebruiken + routes",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

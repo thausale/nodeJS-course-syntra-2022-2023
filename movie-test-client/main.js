@@ -1,15 +1,15 @@
-const fetchBtn = document.querySelector('.fetch-btn');
-const movies = document.getElementById('movies');
+const fetchBtn = document.querySelector(".fetch-btn");
+const movies = document.getElementById("movies");
 let loading = false;
 
 const getMovies = async () => {
   loading = true;
   try {
-    if (loading) movies.innerHTML = 'Loading...';
-    const response = await fetch('http://localhost:3000/api/v1/movies');
+    if (loading) movies.innerHTML = "Loading...";
+    const response = await fetch("http://localhost:3000/api/");
     const data = await response.json();
     loading = false;
-    movies.innerHTML = data.result
+    movies.innerHTML = data
       .map(
         (movie) => `
           <aside>
@@ -17,16 +17,16 @@ const getMovies = async () => {
               <h3>${movie.title}</h3>
               <img src=${movie.poster} width="220px" height="326px"/>
             </header>
-            <p><small>Actors: ${movie.actors.join(', ')}</small></p>
-            <p><small>Release year: ${movie.releaseYear}</small></p>
+            <p><small>Actors: ${movie.actors.join(", ")}</small></p>
+            <p><small>Release year: ${movie.releaseyear}</small></p>
           </aside>
     `
       )
-      .join('');
+      .join("");
   } catch (error) {
     console.error(error);
     loading = false;
-    movies.innerHTML = 'Error message: ' + error.message;
+    movies.innerHTML = "Error message: " + error.message;
   }
 };
 

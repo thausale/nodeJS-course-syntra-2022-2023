@@ -1,12 +1,19 @@
 //THIS FILE SHOULD BE IN A routes MAP
 import express from "express";
 
-//EXAMPLE LINES OF ACTIONROUTES.JS, NEED A ACTIONCONTROLLER IN CONTROLLERS MAP
-//CHECK cnExpressActionController FOR MAKING AN ACTIONCONTROLLER
-
-import { getAll, getById } from "../controllers/actionController.js";
+import {
+  getAll,
+  getById,
+  updateSinger,
+  deleteSinger,
+  createSinger,
+} from "../controllers/actionController.js";
 
 const router = express.Router();
+router.put("/:id", updateSinger);
 router.get("/singers", getAll);
 router.get("/singers/:id", getById);
+router.delete("/:id", deleteSinger);
+router.post("/", createSinger);
+
 export default router;
